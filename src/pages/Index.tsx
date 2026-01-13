@@ -11,6 +11,13 @@ interface Character {
   description: string;
   evolution: string;
   role: string;
+  image?: string;
+}
+
+interface ComicPanel {
+  text: string;
+  image?: string;
+  caption?: string;
 }
 
 interface TimelineEvent {
@@ -24,7 +31,8 @@ const characters: Character[] = [
     name: 'Родион Раскольников',
     description: 'Бывший студент, живущий в крайней нищете. Создатель теории о "право имеющих".',
     evolution: 'От гордого интеллектуала через преступление к моральному перерождению и покаянию.',
-    role: 'Протагонист'
+    role: 'Протагонист',
+    image: 'https://cdn.poehali.dev/projects/6a48ec6b-89e1-4b0b-b421-5e31a2d4fb1a/files/7b928c24-f2d1-4f1c-9067-c05e3bf32a04.jpg'
   },
   {
     name: 'Соня Мармеладова',
@@ -129,67 +137,67 @@ const acts = [
     title: 'Пролог',
     description: 'Зарождение идеи',
     panels: [
-      'Раскольников в своей каморке размышляет о "праве"',
-      'Разговор с Мармеладовым о судьбе и страдании',
-      'Письмо матери — последняя капля перед решением'
+      { text: 'Раскольников в своей каморке размышляет о "праве"', image: 'https://cdn.poehali.dev/projects/6a48ec6b-89e1-4b0b-b421-5e31a2d4fb1a/files/7b928c24-f2d1-4f1c-9067-c05e3bf32a04.jpg' },
+      { text: 'Разговор с Мармеладовым о судьбе и страдании' },
+      { text: 'Письмо матери — последняя капля перед решением' }
     ]
   },
   {
     title: 'Акт I',
     description: 'Преступление',
     panels: [
-      'Раскольников крадётся к квартире процентщицы',
-      'Удар топором — убийство Алёны Ивановны',
-      'Неожиданное появление Лизаветы — второе убийство',
-      'Бегство через чёрный ход с награбленным'
+      { text: 'Раскольников крадётся к квартире процентщицы' },
+      { text: 'Удар топором — убийство Алёны Ивановны', image: 'https://cdn.poehali.dev/projects/6a48ec6b-89e1-4b0b-b421-5e31a2d4fb1a/files/616229b5-f1f6-4310-b367-1d22edae650e.jpg', caption: 'Момент преступления' },
+      { text: 'Неожиданное появление Лизаветы — второе убийство' },
+      { text: 'Бегство через чёрный ход с награбленным' }
     ]
   },
   {
     title: 'Акт II',
     description: 'Наказание начинается',
     panels: [
-      'Раскольников в горячке, кошмары и видения',
-      'Повестка в контору — первый страх разоблачения',
-      'Обморок при слове "убийство"'
+      { text: 'Раскольников в горячке, кошмары и видения' },
+      { text: 'Повестка в контору — первый страх разоблачения' },
+      { text: 'Обморок при слове "убийство"' }
     ]
   },
   {
     title: 'Акт III',
     description: 'Психологическая дуэль',
     panels: [
-      'Кабинет Порфирия — игра в кошки-мышки',
-      'Раскольников защищает свою статью о "праве"',
-      'Встреча с Соней — первый луч надежды'
+      { text: 'Кабинет Порфирия — игра в кошки-мышки' },
+      { text: 'Раскольников защищает свою статью о "праве"' },
+      { text: 'Встреча с Соней — первый луч надежды' }
     ]
   },
   {
     title: 'Акт IV',
     description: 'Признание и отражения',
     panels: [
-      'Раскольников читает Соне Евангелие о Лазаре',
-      'Признание Соне: "Я убил..."',
-      'Свидригайлов — тёмное зеркало Раскольникова',
-      'Смерть Мармеладова — цена греха'
+      { text: 'Раскольников читает Соне Евангелие о Лазаре', image: 'https://cdn.poehali.dev/projects/6a48ec6b-89e1-4b0b-b421-5e31a2d4fb1a/files/a04d29a0-616e-48b2-bbb0-933a659d239f.jpg', caption: 'Чтение о воскресении Лазаря' },
+      { text: 'Признание Соне: "Я убил..."' },
+      { text: 'Свидригайлов — тёмное зеркало Раскольникова' },
+      { text: 'Смерть Мармеладова — цена греха' }
     ]
   },
   {
     title: 'Акт V',
     description: 'Развязка',
     panels: [
-      'Последний разговор с Порфирием о совести',
-      'Свидригайлов у дверей вечности — выстрел',
-      'Путь к Сенной площади через крестный ход',
-      'Раскольников целует землю и признаётся народу'
+      { text: 'Последний разговор с Порфирием о совести' },
+      { text: 'Свидригайлов у дверей вечности — выстрел' },
+      { text: 'Путь к Сенной площади через крестный ход' },
+      { text: 'Раскольников целует землю и признаётся народу' }
     ]
   },
   {
     title: 'Эпилог',
     description: 'Воскресение',
     panels: [
-      'Раскольников на каторге среди осуждённых',
-      'Соня приезжает в Сибирь — верность и любовь',
-      'Сон о моровой язве — символ старой теории',
-      'Евангелие под подушкой — начало новой жизни'
+      { text: 'Раскольников на каторге среди осуждённых' },
+      { text: 'Соня приезжает в Сибирь — верность и любовь' },
+      { text: 'Сон о моровой язве — символ старой теории' },
+      { text: 'Евангелие под подушкой — начало новой жизни' }
     ]
   }
 ];
@@ -270,13 +278,29 @@ export default function Index() {
                   {acts[selectedAct].panels.map((panel, index) => (
                     <div
                       key={index}
-                      className="bg-muted/50 rounded-lg p-6 border-l-4 border-primary hover:bg-muted/70 transition-colors"
+                      className="bg-muted/50 rounded-lg overflow-hidden border-l-4 border-primary hover:bg-muted/70 transition-all hover:shadow-xl"
                     >
-                      <div className="flex items-start gap-4">
-                        <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
-                          {index + 1}
+                      {panel.image && (
+                        <div className="relative h-64 md:h-96 overflow-hidden">
+                          <img 
+                            src={panel.image} 
+                            alt={panel.text}
+                            className="w-full h-full object-cover"
+                          />
+                          {panel.caption && (
+                            <div className="absolute bottom-0 left-0 right-0 bg-black/70 backdrop-blur-sm p-3">
+                              <p className="text-sm text-white/90 italic">{panel.caption}</p>
+                            </div>
+                          )}
                         </div>
-                        <p className="text-lg leading-relaxed pt-1">{panel}</p>
+                      )}
+                      <div className="p-6">
+                        <div className="flex items-start gap-4">
+                          <div className="bg-primary text-primary-foreground rounded-full w-10 h-10 flex items-center justify-center font-bold flex-shrink-0">
+                            {index + 1}
+                          </div>
+                          <p className="text-lg leading-relaxed pt-1">{panel.text}</p>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -288,11 +312,27 @@ export default function Index() {
           <TabsContent value="characters" className="animate-fade-in">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {characters.map((character, index) => (
-                <Card key={index} className="hover-scale">
+                <Card key={index} className="hover-scale overflow-hidden">
+                  {character.image && (
+                    <div className="relative h-48 overflow-hidden">
+                      <img 
+                        src={character.image} 
+                        alt={character.name}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                      <Badge 
+                        variant="secondary" 
+                        className="absolute top-3 right-3 backdrop-blur-sm"
+                      >
+                        {character.role}
+                      </Badge>
+                    </div>
+                  )}
                   <CardHeader>
                     <div className="flex items-start justify-between mb-2">
                       <CardTitle className="text-2xl">{character.name}</CardTitle>
-                      <Badge variant="secondary">{character.role}</Badge>
+                      {!character.image && <Badge variant="secondary">{character.role}</Badge>}
                     </div>
                     <CardDescription className="text-base">
                       {character.description}
